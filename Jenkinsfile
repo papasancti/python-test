@@ -16,7 +16,7 @@ pipeline {
       }
       steps {
         sh 'ls'
-        sh 'cat webpage.py'
+        sh 'cat app/webpage.py'
       }
     }
       
@@ -25,7 +25,7 @@ pipeline {
             message 'Applicativo lanciato. Attendo conferma URL per procedere.'
         }
         steps {
-          sh 'python3 webpage.py'
+          sh 'python3 app/webpage.py'
         }
       }
       
