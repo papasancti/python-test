@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Download') {
       steps {
-        sh 'rm -rf *
+        sh 'rm -rf *'
         script {
           set +e
           try {
