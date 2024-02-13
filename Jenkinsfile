@@ -20,7 +20,7 @@ pipeline {
         sh 'ls'
         sh 'cat webpage.py'
         input {
-          message : 'Contenuto cartella e applicativo mostrato. Procedere?'
+          message 'Contenuto cartella e applicativo mostrato. Procedere?'
         }
       }
     }
@@ -28,7 +28,7 @@ pipeline {
         steps {
           sh 'python3 webpage.py'
           input {
-            message : 'Applicativo lanciato. Attendo conferma URL per procedere.'
+            message 'Applicativo lanciato. Attendo conferma URL per procedere.'
           }
         }
       }
