@@ -8,11 +8,9 @@ pipeline {
             try {
               sh 'dpkg-query -W python3 && dpkg-query -W flask'
           } catch (e) {
-              if ( ${e} == 1 ) {
-                sh 'echo NOPE'
-              }
-            } 
-        }
+              sh 'echo NOPE'
+            }
+          }
       }
     }
   }
