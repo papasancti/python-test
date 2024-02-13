@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Download') {
       steps {
-        sh 'rm -rf *'
+        sh "rm -rf *"
         script {
           set +e
           sh 'dpkg-query -W python3 flask'
