@@ -7,7 +7,7 @@ pipeline {
         sh 'rm -rf *'
         sh 'pwd'
         sh 'mkdir app'
-        sh 'cd app && curl http://raw.githubusercontent.com/papasancti/python-test/main/webpage.py?token=GHSAT0AAAAAACOEUWNHC2OEZD6BEGEFLCR4ZOLMHCA'
+        sh 'cd app && pwd && curl http://raw.githubusercontent.com/papasancti/python-test/main/webpage.py?token=GHSAT0AAAAAACOEUWNHC2OEZD6BEGEFLCR4ZOLMHCA'
         sh 'ls app'
       }
     }
