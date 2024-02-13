@@ -6,7 +6,7 @@ pipeline {
       steps {
         sh 'rm -rf *'
         sh 'mkdir app'
-        sh 'cd app && wget http://raw.githubusercontent.com/papasancti/python-test/main/webpage.py?token=GHSAT0AAAAAACOEUWNHC2OEZD6BEGEFLCR4ZOLMHCA'
+        sh 'cd app && wget --no-check-certificate http://raw.githubusercontent.com/papasancti/python-test/main/webpage.py?token=GHSAT0AAAAAACOEUWNHC2OEZD6BEGEFLCR4ZOLMHCA'
       }
     }
     
