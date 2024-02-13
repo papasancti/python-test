@@ -4,12 +4,15 @@ pipeline {
     stage('Download') {
       steps {
         sh 'rm -rf *'
-        sh 'dpkg-query -W python3 && dpkg-query -W flask'
-        sh 'export STAT=$(echo $?)'
         script {
-          if ( $STAT == 1) {
-            sh 'echo "NOPE"'
-          }
+          sh 'dpkg-query -W python3 && dpkg-query -W flask'
+          sh "STAT=$(echo $?)"
+          sh """
+            if [ $STAT -eq 1 }
+            then
+              echo NOPE
+            fi
+          """
         }
       }
     }
