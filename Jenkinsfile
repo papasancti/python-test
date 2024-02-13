@@ -16,20 +16,20 @@ pipeline {
       }
     }
     stage ('TEST File') {
+      input {
+          message 'Contenuto cartella e applicativo mostrato. Procedere?'
+      }
       steps {
         sh 'ls'
         sh 'cat webpage.py'
-        input {
-          message 'Contenuto cartella e applicativo mostrato. Procedere?'
-        }
       }
     }
       stage ('TEST App') {
+        input {
+            message 'Applicativo lanciato. Attendo conferma URL per procedere.'
+        }
         steps {
           sh 'python3 webpage.py'
-          input {
-            message 'Applicativo lanciato. Attendo conferma URL per procedere.'
-          }
         }
       }
       stage ('Done') {
