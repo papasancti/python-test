@@ -6,7 +6,7 @@ pipeline {
       steps {
         sh 'rm -rf *'
         sh 'mkdir app'
-        sh 'cd app && curl http://raw.githubusercontent.com/papasancti/python-test/main/webpage.py?token=GHSAT0AAAAAACOEUWNHC2OEZD6BEGEFLCR4ZOLMHCA'
+        sh 'cd app && curl https://raw.githubusercontent.com/papasancti/python-test/main/webpage.py?token=GHSAT0AAAAAACOEUWNHC2OEZD6BEGEFLCR4ZOLMHCA'
       }
     }
     
