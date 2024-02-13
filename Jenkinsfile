@@ -1,22 +1,21 @@
 pipeline {
   agent any
+  
   stages {
     stage('Download') {
       steps {
         sh 'rm -rf *'
         script {
           set +e
-          try {
-             sh 'dpkg-query -W python3 && dpkg-query -W flask'
-        } catch (e) {
-            apt install -y python3 flask
-          }
+          sh 'dpkg-query -W python3 flask'
+          sh 'echo $?'
           set -e
          }
         sh 'mkdir app'
         sh 'wget https://raw.githubusercontent.com/papasancti/python-test/main/webpage.py?token=GHSAT0AAAAAACOEUWNHC2OEZD6BEGEFLCR4ZOLMHCA'
       }
     }
+    
     stage ('TEST File') {
       input {
           message 'Contenuto cartella e applicativo mostrato. Procedere?'
@@ -26,7 +25,8 @@ pipeline {
         sh 'cat webpage.py'
       }
     }
-      stage ('TEST App') {
+      
+    stage ('TEST App') {
         input {
             message 'Applicativo lanciato. Attendo conferma URL per procedere.'
         }
@@ -34,7 +34,8 @@ pipeline {
           sh 'python3 webpage.py'
         }
       }
-      stage ('Done') {
+      
+    stage ('Done') {
         steps {
           echo 'Applicativo controllato e funzionante! :)'
       }
