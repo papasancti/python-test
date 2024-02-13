@@ -4,15 +4,9 @@ pipeline {
   stages {
     stage('Download') {
       steps {
-        script {
-          set +e
-          sh "rm -rf *"
-          sh 'dpkg-query -W python3 flask'
-          sh 'echo $?'
-          set -e
-         }
+        sh 'rm -rf *'
         sh 'mkdir app'
-        sh 'wget https://raw.githubusercontent.com/papasancti/python-test/main/webpage.py?token=GHSAT0AAAAAACOEUWNHC2OEZD6BEGEFLCR4ZOLMHCA'
+        sh 'cd app && wget https://raw.githubusercontent.com/papasancti/python-test/main/webpage.py?token=GHSAT0AAAAAACOEUWNHC2OEZD6BEGEFLCR4ZOLMHCA'
       }
     }
     
