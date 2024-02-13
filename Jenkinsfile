@@ -3,13 +3,15 @@ pipeline {
   stages {
     stage('Download') {
       steps {
-        sh 'rm -rf *'
+        sh 'rm -rf *
         script {
+          set +e
           try {
              sh 'dpkg-query -W python3 && dpkg-query -W flask'
         } catch (e) {
             apt install -y python3 flask
           }
+          set -e
          }
         sh 'mkdir app'
         sh 'wget https://raw.githubusercontent.com/papasancti/python-test/main/webpage.py?token=GHSAT0AAAAAACOEUWNHC2OEZD6BEGEFLCR4ZOLMHCA'
