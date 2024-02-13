@@ -4,7 +4,7 @@ pipeline {
       steps {
         sh "rm -rf *"
         sh "dpkg-query -W python32 && dpkg-query -W flask"
-        sh "export STAT=$(echo $?)"
+        sh "export STAT=`echo $?`"
         if ( $STAT == 1) {
           sh "apt install -y python3 flask"
         }
