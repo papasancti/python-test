@@ -6,7 +6,7 @@ pipeline {
       steps {
         sh 'rm -rf *'
         sh 'dpkg-query -W python3 || apt install -y python'
-        sh 'dpkg-query -W flask || apt install -y flask'
+        sh 'pip3 install flask'
         sh 'mkdir app'
         sh 'cd app && pwd && curl http://raw.githubusercontent.com/papasancti/python-test/main/webpage.py?token=GHSAT0AAAAAACOEUWNHC2OEZD6BEGEFLCR4ZOLMHCA'
         sh 'ls app'
